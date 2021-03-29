@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
-  entry: ['./src/main.js', './src/sass/main.scss'],
+  entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'http://localhost:3000/dist',
@@ -48,7 +48,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     host: 'localhost',
     compress: true,
-    port: 3000,
+    port: 9000,
   },
   plugins: [
     new HtmlWebpackPlugin({
