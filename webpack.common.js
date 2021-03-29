@@ -3,13 +3,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
   devtool: 'inline-source-map',
-  entry: ['./src/main.js'],
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'http://localhost:3000/dist',
     filename: 'bundle.js',
+    clean: true,
   },
   module: {
     rules: [
@@ -44,15 +43,10 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    host: 'localhost',
-    compress: true,
-    port: 9000,
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      title: 'Development',
+      template: './src/index.html',
     }),
   ],
 };
